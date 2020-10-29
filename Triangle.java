@@ -20,4 +20,10 @@ public class Triangle {
     double perimeter = sideOne + sideTwo + sideThree;
     return perimeter;
   }
+
+  public double getArea() {
+    double semiPerimeter = getPerimeter() / 2;
+    double area = Math.sqrt(semiPerimeter*(semiPerimeter-v1.distanceTo(v2))*(semiPerimeter-v2.distanceTo(v3))*(semiPerimeter-v3.distanceTo(v1)));
+    return area;
+  }
 }
