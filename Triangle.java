@@ -26,4 +26,24 @@ public class Triangle {
     double area = Math.sqrt(semiPerimeter*(semiPerimeter-v1.distanceTo(v2))*(semiPerimeter-v2.distanceTo(v3))*(semiPerimeter-v3.distanceTo(v1)));
     return area;
   }
+
+  public String classify() {
+    double sideOne = (Math.round((v1.distanceTo(v2))*10e3))/10e3;
+    double sideTwo = (Math.round((v2.distanceTo(v3))*10e3))/10e3;
+    double sideThree = (Math.round((v3.distanceTo(v1))*10e3))/10e3;
+    if ((sideOne == sideTwo) && (sideTwo == sideThree) && (sideThree == sideOne)) {
+      return "Equilaterial Triangle";
+    }
+    else if ((sideOne != sideTwo) && (sideTwo != sideThree) && (sideThree != sideOne)) {
+      return "Scalene Triangle";
+    } else {
+      return "Isosceles Triangle";
+    }
+  }
+
+  public String toString() {
+    return "v1(" + v1.getX() + ", " + v1.getY() + ") " + "v2(" + v2.getX() + ", " + v2.getY() + ") " + "v3(" + v3.getX() + ", " + v3.getY() + ")" ;
+  }
+
+
 }
