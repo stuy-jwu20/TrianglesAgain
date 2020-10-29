@@ -32,12 +32,12 @@ public class Triangle {
     double sideTwo = (Math.round((v2.distanceTo(v3))*10e3))/10e3;
     double sideThree = (Math.round((v3.distanceTo(v1))*10e3))/10e3;
     if ((sideOne == sideTwo) && (sideTwo == sideThree) && (sideThree == sideOne)) {
-      return "Equilaterial Triangle";
+      return "equilateral";
     }
     else if ((sideOne != sideTwo) && (sideTwo != sideThree) && (sideThree != sideOne)) {
-      return "Scalene Triangle";
+      return "scalene";
     } else {
-      return "Isosceles Triangle";
+      return "isosceles";
     }
   }
 
@@ -45,5 +45,9 @@ public class Triangle {
     return "v1(" + v1.getX() + ", " + v1.getY() + ") " + "v2(" + v2.getX() + ", " + v2.getY() + ") " + "v3(" + v3.getX() + ", " + v3.getY() + ")" ;
   }
 
-
+  public void setVertex(int index, Point newP) {
+    if (index == 0) v1 = newP;
+    if (index == 1) v2 = newP;
+    if (index == 2) v3 = newP;
+  }
 }
