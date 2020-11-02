@@ -25,6 +25,6 @@ public class Point {
   }
 
   public boolean equals(Point other){
-    return ((other.getX() == x) && (other.getY() == y));
+    return ((other != null) && (other.getX() == x) && (other.getY() == y));
   }
 }
